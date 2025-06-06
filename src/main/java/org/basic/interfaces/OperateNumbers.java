@@ -66,7 +66,7 @@ public class OperateNumbers{
 
         List<String> students = Arrays.asList("Ram", "Shyam", "Ghanshyam");
         students.forEach(x -> System.out.println(x));
-        // method reference where we dont have to invoke method, we just refer it
+        // method reference where we don't have to invoke method, we just refer it
         students.forEach(System.out::println);
 
         // constructor reference -> same as method reference but for constructor

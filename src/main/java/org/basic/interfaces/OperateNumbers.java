@@ -6,6 +6,7 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
+import java.util.stream.Collectors;
 
 // all functional interfaces and their lambdas
 public class OperateNumbers{
@@ -13,8 +14,8 @@ public class OperateNumbers{
         Operate add = (a, b) -> a + b;
         Operate subtract = (a, b) -> a - b;
 
-        System.out.println(add.operate(1,2));
-        System.out.println(subtract.operate(2,1));
+        System.out.println(add.operate(1, 2));
+        System.out.println(subtract.operate(2, 1));
 
         // Predicate used to check condition
         Predicate<Integer> isEven = x -> x % 2 == 0;
@@ -60,5 +61,35 @@ public class OperateNumbers{
         }
 
         // There is also unary and binary operators along with Bifunction and etc for 2 inputs
+
+        // method reference can be used to replace lambda in some cases
+
+        List<String> students = Arrays.asList("Ram", "Shyam", "Ghanshyam");
+        students.forEach(x -> System.out.println(x));
+        // method reference where we dont have to invoke method, we just refer it
+        students.forEach(System.out::println);
+
+        // constructor reference -> same as method reference but for constructor
+        List<String> phones = Arrays.asList("A", "B", "C");
+        phones.forEach(x -> new Phones(x));
+
+        // constructor reference
+        // here we wouldn't know obj names so use stream to collect those names as list
+        phones.forEach(Phones::new);
+
+        // object names as list
+        List<Phones> phoneObjects = phones.stream().map(Phones::new).collect(Collectors.toList());
+
+        // print mobile names via object
+        phoneObjects.forEach(x -> System.out.println(x.name));
+
+    }
+}
+
+class Phones {
+    String name;
+
+    public Phones(String name) {
+        this.name = name;
     }
 }

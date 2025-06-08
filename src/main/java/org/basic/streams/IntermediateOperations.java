@@ -37,5 +37,18 @@ public class IntermediateOperations {
         System.out.println(Stream.iterate(1, x -> x + 1).skip(10).limit(100).count());
         // skip happened after limiting hence count = 90
         System.out.println(Stream.iterate(1, x -> x + 1).limit(100).skip(10).count());
+
+        // 7. peek -> same as forEach but used as intermediate operation
+        System.out.println(names.stream().peek(System.out::println).count());
+
+
+        // 8. flatMap -> flattens a list of list and map also included for use to transform the stream
+        List<List<String>> fruits = Arrays.asList(
+                Arrays.asList("Apple", "Banana"),
+                Arrays.asList("Grape", "Mango"),
+                Arrays.asList("Orange", "Kiwi")
+        );
+
+        System.out.println(fruits.stream().flatMap(x -> x.stream()).map(String::toUpperCase).toList());
     }
 }

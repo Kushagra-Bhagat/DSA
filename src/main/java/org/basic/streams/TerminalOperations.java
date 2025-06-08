@@ -41,5 +41,9 @@ public class TerminalOperations {
         // we have a special function to convert string to stream
 
         System.out.println(s.chars().filter(x -> x == 'l').count());
+
+        // stateless and stateful
+        // stateless -> doesn't know about all other elements eg -> map
+        // stateful -> opposite of stateless eg - distinct, sorted
     }
 }

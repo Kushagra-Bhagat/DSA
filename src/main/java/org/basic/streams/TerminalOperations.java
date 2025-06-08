@@ -45,5 +45,11 @@ public class TerminalOperations {
         // stateless and stateful
         // stateless -> doesn't know about all other elements eg -> map
         // stateful -> opposite of stateless eg - distinct, sorted
+
+        // 6. forEachOrdered -> we use it as forEach for parallel streams
+        System.out.println("Before using for each ordered: ");
+        nums.parallelStream().forEach(System.out::println);
+        System.out.println("After using for each ordered: ");
+        nums.parallelStream().forEachOrdered(System.out::println);
     }
 }

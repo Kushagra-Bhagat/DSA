@@ -1,5 +1,6 @@
 package org.basic.streams;
 
+import java.lang.reflect.Array;
 import java.net.URLPermission;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -53,5 +54,36 @@ public class CollectorsDemo {
         System.out.println(map2);
         System.out.println(map3);
 
+
+        // Example 1 - Collecting names by length
+        List<String> list = Arrays.asList("Bob", "Charlie", "Alice", "Aman", "Kushagra", "Amrit");
+        System.out.println(list.stream().collect(Collectors.groupingBy(String::length)));
+
+        // Example 2 - Counting word occurrences
+        String sentence = "hello world hello java world";
+        System.out.println(Arrays.stream(sentence.split(" "))
+                .collect(Collectors.groupingBy(x -> x, Collectors.counting())));
+
+        // Example 3 - Partitioning even and odd numbers
+        List<Integer> list1 = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
+        System.out.println(list1.stream().collect(Collectors.partitioningBy(x -> x % 2 == 0)));
+
+        // Example 4 - Summing values in a map
+        HashMap<String, Integer> hashMap = new HashMap<>();
+        hashMap.put("Apple", 3);
+        hashMap.put("Banana", 5);
+        hashMap.put("Kiwi", 8);
+
+        System.out.println(hashMap.values().stream().reduce(Integer::sum).get());
+        System.out.println("Using Collectors: ");
+        System.out.println(hashMap.values().stream().collect(Collectors.summingInt(x -> x)));
+
+        // Example 5 - Convert list to map where values are length of key
+        List<String> fruits = Arrays.asList("Apple", "banana", "Cherry", "kiwi");
+        System.out.println(fruits.stream().collect(Collectors.toMap(String::toUpperCase, String::length)));
+
+        // Example 6 - Create map for duplicate keys
+        fruits = Arrays.asList("Apple", "banana", "Cherry", "kiwi", "apple", "banana", "mango");
+        System.out.println(fruits.stream().collect(Collectors.toMap(String::toUpperCase, v -> 1, (x, y) -> x + y)));
     }
 }

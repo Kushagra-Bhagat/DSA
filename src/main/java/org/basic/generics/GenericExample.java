@@ -14,5 +14,9 @@ public class GenericExample {
         Pair<String, Integer> pair = new Pair<>("Age", 30);
         System.out.println(pair.getKey());
         System.out.println(pair.getValue());
+
+        GenericContainer<Integer> genericContainer = new GenericContainer<>();
+        genericContainer.add(5);
+        System.out.println("Integer container value: " + genericContainer.get());
     }
 }

@@ -1,6 +1,9 @@
 package org.basic.generics;
 
-public class Box<T> {
+import org.basic.generics.example.Printable;
+
+// extends -> bounded generic
+public class Box<T extends Number & Printable> {
 
     private T value;
 

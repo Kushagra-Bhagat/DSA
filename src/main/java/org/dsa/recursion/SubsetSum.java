@@ -14,6 +14,7 @@ public class SubsetSum {
         System.out.println(res);
     }
 
+    // O(2^n) - both time and space(because subset would be 2^n)
     public static void subset(int idx, int[] ar, int sum, List<Integer> res) {
         if (idx == ar.length) {
             res.add(sum);

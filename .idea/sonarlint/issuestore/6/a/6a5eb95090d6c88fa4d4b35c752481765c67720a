@@ -1,0 +1,12 @@
+
+}
+java:S1319"`The type of "map" should be an interface such as "Map" rather than the implementation "HashMap".(¢¼·8 ü©®ÿ2
+J
+java:S5411 "(Use a primitive boolean expression here.(˜²¾Äşÿÿÿÿ8¡ü©®ÿ2
+L	java:S106"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8¾ü©®ÿ2
+L	java:S106"+Replace this use of System.out by a logger.(¸šñÙüÿÿÿÿ8Àü©®ÿ2
+V
+java:S2864"4Iterate over the "entrySet" instead of the "keySet".(û‹éúÿÿÿÿ8Áü©®ÿ2
+G	java:S106/"+Replace this use of System.out by a logger.(™ã¯8Åü©®ÿ2
+Z
+java:S1128"8Remove this unused import 'java.util.stream.Collectors'.(Óóº´úÿÿÿÿ8¤«®ÿ2

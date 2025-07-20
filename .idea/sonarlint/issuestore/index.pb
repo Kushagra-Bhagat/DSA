@@ -13,3 +13,7 @@ c
 -src/main/java/org/dsa/recursion/PowerSet.java,6\a\6af0b43ef2ada27857af1b6f53529debd42d40a6
 `
 0src/main/java/org/dsa/recursion/Permutation.java,6\a\6a5eb95090d6c88fa4d4b35c752481765c67720a
+[
++src/main/java/org/dsa/recursion/NQueen.java,2\e\2e5602414e818195ef3f96963e3c1e2759e47703
+[
++src/main/java/org/dsa/recursion/Sudoku.java,4\5\456b8360ea50750bdc4de29fcb2c6d642815a0c3

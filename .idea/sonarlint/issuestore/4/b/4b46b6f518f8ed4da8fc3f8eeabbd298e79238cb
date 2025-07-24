@@ -1,0 +1,8 @@
+
+…
+java:S1319"cThe type of "sol" should be an interface such as "List" rather than the implementation "ArrayList".(ÆÜıôıÿÿÿÿ8ßæëàƒ3
+L	java:S106"+Replace this use of System.out by a logger.(³×ıÿÿÿÿ8µéëàƒ3
+A
+java:S1659"Declare "j" on a separate line.(»¼ûîûÿÿÿÿ8Ééëàƒ3
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8Ñéëàƒ3

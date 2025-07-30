@@ -51,6 +51,7 @@ public class FrogJumpK {
         return min;
     }
 
+    // no need to space optimize as it will be O(k) no use if k = n
     public static int jumpTabu(int[] height, int n, int k) {
         int[] dp = new int[n + 1];
         dp[0] = 0;

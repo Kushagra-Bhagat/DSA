@@ -3,6 +3,7 @@ package org.dsa.dp;
 import java.util.Arrays;
 
 // Without obstacles
+// start from (0,0) and end at (n-1,n-1)
 public class MaximumPathSum {
     public static void main(String[] args) {
         int[][] ar = {

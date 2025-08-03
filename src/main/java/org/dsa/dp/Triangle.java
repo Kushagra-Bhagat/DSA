@@ -71,6 +71,7 @@ public class Triangle {
 
     // TC -> O(n^2)
     // SC -> O(n)
+    // instead of next use another n space array for ease
     public static int maxPointsOpt(int[][] mat) {
         int n = mat.length;
         int[] dp = new int[n];

@@ -92,7 +92,7 @@ public class NinjaAndHisFriends {
         return dp[row][col1][col2];
     }
 
-    public static int maxChocoTabu(int[][] mat) {
+    public static void maxChocoTabu(int[][] mat) {
         int n = mat.length;
         int m = mat[0].length;
         int[][][] dp = new int[n][m][m];

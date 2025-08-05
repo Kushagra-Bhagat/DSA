@@ -2,6 +2,8 @@ package org.dsa.dp;
 
 import java.util.Arrays;
 
+// will change when we have sum = 0 and have 0 in our array
+// minor change but think about base case
 public class CountSubsets {
     public static void main(String[] args) {
         int[] ar = {1, 2, 2, 3};

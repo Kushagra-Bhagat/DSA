@@ -1,6 +1,6 @@
-package org.dsa.dp;
+package org.dsa.dp.subsequence;
 
-import static org.dsa.dp.Subsequence.sumOpt;
+import static org.dsa.dp.subsequence.Subsequence.sumOpt;
 
 // Partition array into two parts with equal sum
 // means you need sum/2 for one

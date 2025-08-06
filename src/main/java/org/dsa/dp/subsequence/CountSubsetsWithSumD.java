@@ -1,4 +1,4 @@
-package org.dsa.dp;
+package org.dsa.dp.subsequence;
 
 // Also S1 is greater than S2
 public class CountSubsetsWithSumD {

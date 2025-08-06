@@ -1,4 +1,4 @@
-package org.dsa.dp;
+package org.dsa.dp.subsequence;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package org.dsa.dp;
+package org.dsa.dp.subsequence;
 
 // divide array in 2 subsets with minimum absolute difference
 public class SubsetSumForMinimumDifference {

@@ -17,6 +17,10 @@ public class lcs {
         System.out.println("Using tabulation: " + countTabu(s1, s2));
         System.out.println("using space optimization: " + countOpt(s1, s2));
         System.out.println("lcs: " + getLcs(s1, s2));
+
+        String s = "bbabcbcab";
+        System.out.println("length of palindrome lcs is: " + lengthOfLcsPalindrome(s));
+
     }
 
     public static int count(String s1, int idx1, String s2, int idx2) {
@@ -114,6 +118,7 @@ public class lcs {
             }
         }
 
+        // To understand know what dp[][] stores
         int i = n;
         int j = m;
         StringBuilder res = new StringBuilder();
@@ -137,5 +142,14 @@ public class lcs {
         }
 
         return res.toString();
+    }
+
+    public static int lengthOfLcsPalindrome(String s) {
+        String s1 = s;
+        String s2 = new StringBuilder(s).reverse().toString();
+
+        System.out.println("Longest common palindrome lcs is: " + getLcs(s1, s2));
+
+        return countOpt(s1, s2);
     }
 }

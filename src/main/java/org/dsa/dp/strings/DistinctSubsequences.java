@@ -16,6 +16,7 @@ public class DistinctSubsequences {
         }
         System.out.println("using memoization: " + countMemo(dp, s1, s2, n - 1, m - 1));
         System.out.println("using tabulation: " + countTabu(s1, s2));
+        System.out.println("using optimization: " + countOpt(s1, s2));
     }
 
     public static int count(String s1, String s2, int idx1, int idx2) {
@@ -36,6 +37,8 @@ public class DistinctSubsequences {
     }
 
     // TC -> O(n * m)
+    // SC -> O(n * m)
+    // aux -> O(n + m)
     public static int countMemo(int[][] dp, String s1, String s2, int idx1, int idx2) {
         if (idx2 < 0) {
             return 1;
@@ -80,5 +83,29 @@ public class DistinctSubsequences {
         }
 
         return dp[n][m];
+    }
+
+    public static int countOpt(String s1, String s2) {
+        int n = s1.length();
+        int m = s2.length();
+
+        int[] dp = new int[m + 1];
+        dp[0] = 1;
+
+        for (int i = 1; i <= n; i++) {
+            int[] curr = new int[m + 1];
+            curr[0] = 1;
+            for (int j = 1; j <= m; j++) {
+                if (s1.charAt(i - 1) == s2.charAt(j - 1)) {
+                    curr[j] = dp[j - 1] + dp[j];
+                }
+                else {
+                    curr[j] = dp[j];
+                }
+            }
+            dp = curr;
+        }
+
+        return dp[m];
     }
 }

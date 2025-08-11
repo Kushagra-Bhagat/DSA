@@ -4,8 +4,6 @@ import java.util.Arrays;
 
 // can buy/sell multiple stocks
 // we cannot buy and buy again
-// no space optimization because i + 1, i + 2
-// you can still do it by using 3 arrays
 public class StockTwo {
 
     public static void main(String[] args) {

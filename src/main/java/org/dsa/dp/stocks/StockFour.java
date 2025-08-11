@@ -80,4 +80,7 @@ public class StockFour {
 
         return dp[0][0];
     }
+
+    // no space optimization because i + 1, i + 2
+    // you can still do it by using 3 arrays
 }

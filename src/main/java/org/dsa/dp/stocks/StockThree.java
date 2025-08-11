@@ -85,13 +85,15 @@ public class StockThree {
         return dp[0][0][cap];
     }
 
+    // can be better as 1-d arrays
+    // just create 2 more arrays for each
     public static int buyOpt(int[] prices, int cap) {
 
         int n = prices.length;
         int[][] dp = new int[2][cap + 1];
 
+        int[][] curr = new int[2][cap + 1];
         for (int i = n - 1; i >= 0; i--) {
-            int[][] curr = new int[2][cap + 1];
             for (int j = 1; j <= cap; j++) {
 
                 curr[0][j] = Math.max(-prices[i] + dp[1][j], dp[0][j]);

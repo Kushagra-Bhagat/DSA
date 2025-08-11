@@ -1,4 +1,4 @@
-package org.dsa.dp;
+package org.dsa.dp.recursion;
 
 //Similar to fibonacci as we can only jump 1 or 2 steps
 public class ClimbingStairs {

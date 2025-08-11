@@ -1,4 +1,4 @@
-package org.dsa.dp;
+package org.dsa.dp.recursion;
 
 // can start anywhere on first row and end anywhere on last row
     public class MaxPathForVariablePoints {

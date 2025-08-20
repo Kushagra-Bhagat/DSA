@@ -69,6 +69,7 @@ public class CheckBalancedTree {
         return true;
     }
 
+    // TC -> O(n)
     public static int heightForCheck(Node root) {
 
         if (root == null) {

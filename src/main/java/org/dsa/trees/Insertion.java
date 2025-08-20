@@ -45,6 +45,6 @@ public class Insertion {
         thirdNode.right = fifthNode;
 
         insert(firstNode, 6);
-        Traversal.levelOrderTraversalBFS(firstNode);
+        // Traversal.levelOrderTraversalBFS(firstNode);
     }
 }

@@ -10,10 +10,10 @@ public class BoundaryTraversal {
 //                 20
 //                /  \
 //               8    22
-//                / \     \
-//               4  12    25
-//                /  \
-//               10  14
+//              / \     \
+//             4  12    25
+//               /  \
+//              10  14
 
         Node root = new Node(20);
         root.left = new Node(8);

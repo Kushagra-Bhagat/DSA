@@ -1,0 +1,38 @@
+
+’
+java:S1319,"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Ë½š­ıÿÿÿÿ8Óï¿Œ3
+’
+java:S1319d"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(™şƒÈúÿÿÿÿ8Óï¿Œ3
+r
+java:S1149T"PReplace the synchronized class "Stack" by an unsynchronized one such as "Deque".(óï‚°ÿÿÿÿÿ8Çï¿Œ3
+r
+java:S1149f"PReplace the synchronized class "Stack" by an unsynchronized one such as "Deque".(óï‚°ÿÿÿÿÿ8Çï¿Œ3
+s
+java:S1149…"PReplace the synchronized class "Stack" by an unsynchronized one such as "Deque".(­õøÜøÿÿÿÿ8Çï¿Œ3
+n
+java:S1149†"PReplace the synchronized class "Stack" by an unsynchronized one such as "Deque".(›Ìğ£8Çï¿Œ3
+s
+java:S1149"PReplace the synchronized class "Stack" by an unsynchronized one such as "Deque".(óï‚°ÿÿÿÿÿ8Çï¿Œ3
+n
+java:S1149Á"PReplace the synchronized class "Stack" by an unsynchronized one such as "Deque".(ë“Ô¾8Çï¿Œ3
+L	java:S106"+Replace this use of System.out by a logger.(‹¯šùÿÿÿÿ8Êï¿Œ3
+L	java:S106"+Replace this use of System.out by a logger.(‹¯šùÿÿÿÿ8Ìï¿Œ3
+L	java:S106)"+Replace this use of System.out by a logger.(‹¯šùÿÿÿÿ8Îï¿Œ3
+L	java:S106Z"+Replace this use of System.out by a logger.(ç‘›·şÿÿÿÿ8Óï¿Œ3
+Z
+java:S1854ƒ"7Remove this useless assignment to local variable "res".(¸¸ìáÿÿÿÿÿ8Öï¿Œ3
+K
+java:S1481ƒ"(Remove this unused "res" local variable.(¸¸ìáÿÿÿÿÿ8×ï¿Œ3
+M	java:S106—"+Replace this use of System.out by a logger.(£üã…şÿÿÿÿ8Øï¿Œ3
+M	java:S106­"+Replace this use of System.out by a logger.(§–åûÿÿÿÿ8Ûï¿Œ3
+H	java:S106è"+Replace this use of System.out by a logger.(ƒÕäÉ8àï¿Œ3
+M	java:S106é"+Replace this use of System.out by a logger.(µ©ÿıÿÿÿÿ8àï¿Œ3
+M	java:S106ê"+Replace this use of System.out by a logger.(²”û¥ùÿÿÿÿ8áï¿Œ3
+M	java:S106ı"+Replace this use of System.out by a logger.(›‹Óûÿÿÿÿ8ãï¿Œ3
+H	java:S106ÿ"+Replace this use of System.out by a logger.(Ü½½’8ãï¿Œ3
+M	java:S106"+Replace this use of System.out by a logger.(Å—´ùÿÿÿÿ8äï¿Œ3
+H	java:S106ƒ"+Replace this use of System.out by a logger.(™†Íº8äï¿Œ3
+M	java:S106„"+Replace this use of System.out by a logger.(ëü ‘üÿÿÿÿ8åï¿Œ3
+H	java:S106†"+Replace this use of System.out by a logger.(äÅá–8åï¿Œ3
+M	java:S106‡"+Replace this use of System.out by a logger.(øĞ»¶şÿÿÿÿ8æï¿Œ3
+M	java:S106‰"+Replace this use of System.out by a logger.(ØùÈäùÿÿÿÿ8æï¿Œ3

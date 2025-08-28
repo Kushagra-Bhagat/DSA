@@ -71,3 +71,17 @@ Z
 *src/main/java/org/dsa/trees/Traversal.java,4\8\4827a659eec08cba63219ccb9aa8f07443ca56aa
 b
 2src/main/java/org/dsa/trees/BoundaryTraversal.java,8\8\88c30af8b7bad2d2a7b347bacc7cfa3f0aa25bfb
+b
+2src/main/java/org/dsa/trees/VerticalTraversal.java,7\d\7d329048f8bb5026215b8fa114a1d59aadc764c5
+b
+2src/main/java/org/dsa/trees/TopOrderTraversal.java,e\3\e3ec61287e2d9de10c6b9c525a950da0507c1fd3
+[
++src/main/java/org/dsa/trees/BottomView.java,9\2\92396086835ad7a85e983933f251bf7459874583
+Z
+*src/main/java/org/dsa/trees/Symmetric.java,4\e\4e7ac5493283332c34b2af78e4e1a991a368fd9b
+Z
+*src/main/java/org/dsa/trees/RightView.java,b\c\bc3ee84ac505694026f8abc02fd8d9bea4cd8e31
+[
++src/main/java/org/dsa/trees/RootToNode.java,6\8\68ee581624b2e1552e6f7077dfeef4a05b7573cc
+T
+$src/main/java/org/dsa/trees/LCA.java,c\e\ce07d54099e6a480083e8cca898f24c940476aeb

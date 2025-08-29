@@ -31,6 +31,8 @@ public class CompleteTree {
         System.out.println("No of nodes: " + number(root));
     }
 
+    // TC -> O((log n)^2)
+    // SC -> O(log n)
     public static int number(Node root) {
 
         if (root == null) {

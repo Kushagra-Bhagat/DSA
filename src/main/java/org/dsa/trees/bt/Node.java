@@ -1,10 +1,10 @@
 package org.dsa.trees.bt;
 
 public class Node {
-    int data;
-    Node left, right;
+    public int data;
+    public Node left, right;
 
-    Node (int d) {
+    public Node(int d) {
         data = d;
         left = right = null;
     }

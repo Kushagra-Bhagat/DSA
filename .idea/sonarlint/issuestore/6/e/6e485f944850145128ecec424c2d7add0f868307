@@ -1,7 +1,0 @@
-
-F	java:S106"+Replace this use of System.out by a logger.(Ä‡Ë8œÁšÆŒ3
-G	java:S106#"+Replace this use of System.out by a logger.(ç›Í™8ÙàšÆŒ3
-c
-java:S11268"AReplace this if-then-else statement by a single return statement.(™çìşıÿÿÿÿ8ŸÁšÆŒ3
-c
-java:S1126B"AReplace this if-then-else statement by a single return statement.(¶Ëªûÿÿÿÿ8ŸÁšÆŒ3

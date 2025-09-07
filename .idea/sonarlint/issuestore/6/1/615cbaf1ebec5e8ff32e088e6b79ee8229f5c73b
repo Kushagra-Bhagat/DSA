@@ -1,0 +1,4 @@
+
+]
+java:S2259 "BA "NullPointerException" could be thrown; "lca()" can return null.(ô¸Ìıÿÿÿÿ
+E	java:S106 "+Replace this use of System.out by a logger.(ô¸Ìıÿÿÿÿ

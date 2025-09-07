@@ -23,6 +23,8 @@ public class DFS {
 
     }
 
+    // TC -> O(V) + O(E)
+    // SC -> O(V)
     public static void dfs(int node, boolean[] vis, List<Integer> res, List<ArrayList<Integer>> adjList) {
 
         vis[node] = true;

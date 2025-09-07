@@ -2,58 +2,44 @@ package org.dsa.graphs;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
 
-
-// O(V + E)
-// O(V) - auxillary space
 public class BFS {
+    public static void main(String[] args) {
+        //       2  - 5
+        //     /   \ /
+        //    1     4
+        //     \   /
+        //       3
 
-    static void bfs(List<List<Integer>> adj) {
-        boolean[] visited = new boolean[adj.size()];
-        for (int i = 0; i < adj.size(); i++) {
-            if (!visited[i]) {
-                traversal(adj, i, visited);
-            }
-        }
+        ArrayList<ArrayList<Integer>> adjList = GraphRepresentation.adjacentList(5, 6);
+        System.out.println(breadthSearch(5, adjList, 1));
+
     }
-    static void traversal(List<List<Integer>> adj, int s, boolean[] visited) {
 
-        Queue<Integer> qt = new LinkedList<>();
+    // TC -> O(n) + O(2*E) -> for every node it runs for all its neighbour nodes
+    // SC -> O(n)
+    public static ArrayList<Integer> breadthSearch(int v, ArrayList<ArrayList<Integer>> adjList, int start) {
 
-        qt.add(s);
-        visited[s] = true;
+        ArrayList<Integer> bfs = new ArrayList<>();
+        boolean[] vis = new boolean[v + 1];
+        Queue<Integer> q = new LinkedList<>();
 
-        while (!qt.isEmpty()) {
-            int curr = qt.poll();
-            System.out.print(curr + " ");
-            for (int i : adj.get(curr)) {
-                if (!visited[i]) {
-                    qt.add(i);
-                    visited[i] = true;
+        q.add(start);
+        vis[start] = true;
+
+        while (!q.isEmpty()) {
+            int val = q.poll();
+            bfs.add(val);
+
+            for (int node : adjList.get(val)) {
+                if (!vis[node]) {
+                    vis[node] = true;
+                    q.add(node);
                 }
             }
         }
-    }
 
-    static void addEdge(List<List<Integer>> list, int i, int j) {
-        list.get(i).add(j);
-        list.get(j).add(i);
-    }
-
-    public static void main(String[] args) {
-        int V = 6;
-        List<List<Integer>> adj = new ArrayList<>(V);
-        for (int i = 0; i < V; i++) {
-            adj.add(new ArrayList<>());
-        }
-
-        addEdge(adj, 0, 1);
-        addEdge(adj, 0, 2);
-        addEdge(adj, 3, 4);
-        addEdge(adj, 4, 5);
-
-        bfs(adj);
+        return bfs;
     }
 }

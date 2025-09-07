@@ -1,8 +1,5 @@
 package org.dsa.graphs;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 public class Province {
 
     public static void main(String[] args) {
@@ -28,6 +25,8 @@ public class Province {
     }
 
 
+    // TC -> O(n + 2e) -> we run dfs for graph
+    // SC -> O(n) + O(n)
     public static void countProvinces (int[][] adj, int v) {
 
         int count = 0;

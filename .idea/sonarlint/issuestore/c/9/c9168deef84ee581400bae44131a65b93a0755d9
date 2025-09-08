@@ -1,0 +1,15 @@
+
+
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(¡¼œ¼8á‡’3
+W
+java:S1854	"5Remove this useless assignment to local variable "m".(Æ½öüÿÿÿÿ8ö‡’3
+W
+java:S1854"5Remove this useless assignment to local variable "n".(ì¬âÑüÿÿÿÿ8ö‡’3
+H
+java:S1481"&Remove this unused "n" local variable.(ì¬âÑüÿÿÿÿ8÷‡’3
+H
+java:S1481	"&Remove this unused "m" local variable.(Æ½öüÿÿÿÿ8÷‡’3
+D
+java:S1172"(Remove this unused method parameter "m".(v8ù‡’3
+E
+java:S1172"(Remove this unused method parameter "m".(¡¼œ¼8û‡’3

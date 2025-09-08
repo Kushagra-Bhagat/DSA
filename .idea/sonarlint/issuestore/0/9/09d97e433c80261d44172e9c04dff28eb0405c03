@@ -1,0 +1,5 @@
+
+
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(½ìéÑ8×ÅûŸ’3
+„
+java:S1319"gThe type of "adjList" should be an interface such as "List" rather than the implementation "ArrayList".(½ìéÑ8ØÅûŸ’3

@@ -5,31 +5,38 @@ import java.util.List;
 
 public class CycleInDirected {
 
-    static boolean isCyclicUtil (List<List<Integer>> adj, int u, boolean[] visited, boolean[] recStack) {
-        if (!visited[u]) {
-            visited[u] = true;
-            recStack[u] = true;
+    public static boolean dfs(List<List<Integer>> adjList, int idx, boolean[] vis, boolean[] path) {
 
-            for (int x : adj.get(u)) {
-                if (!visited[x] && isCyclicUtil(adj, x, visited, recStack)) {
+        vis[idx] = true;
+        path[idx] = true;
+
+        for (int node : adjList.get(idx)) {
+            if (!vis[node]) {
+                if (dfs(adjList, node, vis, path)) {
                     return true;
                 }
-                else if (recStack[x]) {
+            }
+            else if (path[node]) {
+                return true;
+            }
+        }
+
+        path[idx] = false;
+        return false;
+    }
+
+    public static boolean isCyclic(List<List<Integer>> adj, int V) {
+        boolean[] vis = new boolean[V];
+        boolean[] path = new boolean[V];
+
+        for (int i = 0; i < V; i++) {
+            if (!vis[i]) {
+                if (dfs(adj, i, vis, path)) {
                     return true;
                 }
             }
         }
-        recStack[u] = false;
-        return false;
-    }
 
-    static boolean isCyclic(List<List<Integer>> adj, int V) {
-        boolean[] visited = new boolean[V];
-        boolean[] recStack = new boolean[V];
-
-        if (isCyclicUtil(adj, 0, visited, recStack)) {
-            return true;
-        }
         return false;
     }
 

@@ -11,48 +11,42 @@ import java.util.*;
 // Topological sort used in software dependency, scheduling tasks.
 public class KahnAlgorithm {
 
-    static int[] topologicalSort (List<List<Integer>> adj, int V) {
-        int[] inDegree = new int[V];
-        int[] result = new int[V];
+    static List<Integer> topologicalSort (List<List<Integer>> adj, int V) {
 
+        int[] inDegree = new int[V];
         for (int i = 0; i < V; i++) {
             for (int idx : adj.get(i)) {
                 inDegree[idx]++;
             }
         }
 
-        Queue<Integer> qt = new LinkedList<>();
-
+        Queue<Integer> q = new LinkedList<>();
         for (int i = 0; i < V; i++) {
             if (inDegree[i] == 0) {
-                qt.offer(i);
+                q.offer(i);
             }
         }
 
-        int index = 0;
-        while (!qt.isEmpty()) {
-            int val = qt.poll();
-            result[index++] = val;
-
-            for (int idx : adj.get(val)) {
-                inDegree[idx]--;
-
-                if (inDegree[idx] == 0) {
-                    qt.offer(idx);
+        List<Integer> res = new ArrayList<>();
+        while (!q.isEmpty()) {
+            int node = q.poll();
+            res.add(node);
+            for (int it : adj.get(node)) {
+                inDegree[it]--;
+                if (inDegree[it] == 0) {
+                    q.offer(it);
                 }
             }
         }
 
-        if (index != V) {
-            System.out.println("Graph contains cycle!");
-            return new int[0];
-        }
-        return result;
+        // if (res.size() != V) -> contains a cycle
+
+        return res;
     }
 
     public static void main(String[] args) {
         int V = 6;
-        List<List<Integer>> adj = new ArrayList<>(V);
+        List<List<Integer>> adj = new ArrayList<>();
         int[][] edges = {{0, 1}, {1, 2}, {2, 3}, {4, 5}, {5, 1}, {5, 2}};
 
         for (int i = 0; i < V; i++) {
@@ -63,8 +57,6 @@ public class KahnAlgorithm {
             adj.get(edge[0]).add(edge[1]);
         }
 
-        int[] result = topologicalSort(adj, V);
-
-        System.out.println(Arrays.toString(result));
+        System.out.println(topologicalSort(adj, V));
     }
 }

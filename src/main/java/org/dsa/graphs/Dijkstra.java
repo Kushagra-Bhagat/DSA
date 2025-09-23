@@ -1,66 +1,66 @@
 package org.dsa.graphs;
 
-import java.util.Arrays;
+import java.util.*;
 
-// Doesn't work if negative cycle present because once a vertex is added we are sure of the path.
+class NodeDistance {
+    int node;
+    int distance;
 
-// O(V^2)// Can be optimized using heaps
+    public NodeDistance(int node, int distance) {
+        this.node = node;
+        this.distance = distance;
+    }
+}
+
+// Using priority queue
+// doesn't work for negative weight and cycles with negative weights
+// TC -> O(E logV) -> watch video for explanation
 public class Dijkstra {
 
-    static void dijkstra(int[][] graph, int src) {
-        int v = graph.length;
-        int[] dist = new int[v];
-        boolean[] spSet = new boolean[v];
+    public static int[] dijkstra(List<List<Edge>> adjList, int src) {
 
-        for (int i = 0; i < v; i++) {
-            dist[i] = Integer.MAX_VALUE;
-        }
+        int n = adjList.size();
+        int[] dist = new int[n];
+        PriorityQueue<NodeDistance> pq = new PriorityQueue<>(Comparator.comparingInt(x -> x.distance));
 
+        Arrays.fill(dist, Integer.MAX_VALUE);
         dist[src] = 0;
+        pq.offer(new NodeDistance(src, 0));
 
-        // Because shortest distance would have v-1 edges
-        for (int count = 0; count < v - 1; count++) {
-            int u = minDist(spSet, dist);
+        while (!pq.isEmpty()) {
+            int node = pq.peek().node;
+            int distance = pq.peek().distance;
+            pq.poll();
 
-            spSet[u] = true;
+            for (int i = 0; i < adjList.get(node).size(); i++) {
+                int adjNode = adjList.get(node).get(i).getNode();
+                int edgeWeight = adjList.get(node).get(i).getWeight();
 
-            for (int i = 0; i < v; i++) {
-                if (!spSet[i] && graph[u][i] != 0
-                    && dist[u] + graph[u][i] < dist[i]) {
-                    dist[i] = dist[u] + graph[u][i];
+                if (distance + edgeWeight < dist[adjNode]) {
+                    dist[adjNode] = distance + edgeWeight;
+                    pq.offer(new NodeDistance(adjNode, dist[adjNode]));
                 }
             }
         }
-        System.out.println(Arrays.toString(dist));
+
+        return dist;
     }
 
-
-    static int minDist(boolean[] spSet, int[] dist) {
-        int v = dist.length;
-        int min = Integer.MAX_VALUE;
-        int minIndex = -1;
-
-        for (int i = 0; i < v; i++) {
-            if(!spSet[i] && dist[i] <= min) {
-                min = dist[i];
-                minIndex = i;
-            }
-        }
-        return minIndex;
-    }
 
     public static void main(String[] args) {
-        int graph[][]
-                = new int[][] { { 0, 4, 0, 0, 0, 0, 0, 8, 0 },
-                { 4, 0, 8, 0, 0, 0, 0, 11, 0 },
-                { 0, 8, 0, 7, 0, 4, 0, 0, 2 },
-                { 0, 0, 7, 0, 9, 14, 0, 0, 0 },
-                { 0, 0, 0, 9, 0, 10, 0, 0, 0 },
-                { 0, 0, 4, 14, 10, 0, 2, 0, 0 },
-                { 0, 0, 0, 0, 0, 2, 0, 1, 6 },
-                { 8, 11, 0, 0, 0, 0, 1, 0, 7 },
-                { 0, 0, 2, 0, 0, 0, 6, 7, 0 } };
 
-        dijkstra(graph, 0);
+        int V = 6;
+        List<List<Edge>> adjList = new ArrayList<>();
+
+        adjList.add(new ArrayList<>(Arrays.asList(new Edge(1, 4), new Edge(2, 4))));
+        adjList.add(new ArrayList<>(Arrays.asList(new Edge(0, 4), new Edge(2, 2))));
+        adjList.add(new ArrayList<>(Arrays.asList(new Edge(0, 4), new Edge(1, 2), new Edge(3, 3), new Edge(4, 1), new Edge(5, 6))));
+        adjList.add(new ArrayList<>(Arrays.asList(new Edge(2, 3), new Edge(5, 2))));
+        adjList.add(new ArrayList<>(Arrays.asList(new Edge(2, 1), new Edge(5, 3))));
+        adjList.add(new ArrayList<>(Arrays.asList(new Edge(2, 6), new Edge(3, 2), new Edge(4, 3))));
+
+        int src = 0;
+
+        System.out.println("distance array: " + Arrays.toString(dijkstra(adjList, src)));
     }
 }

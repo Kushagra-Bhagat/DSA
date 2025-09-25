@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Stack;
 
 class Edge {
-    private int node;
-    private int weight;
+    int node;
+    int weight;
 
     public int getNode() {
         return node;

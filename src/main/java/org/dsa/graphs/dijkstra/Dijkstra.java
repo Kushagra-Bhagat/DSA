@@ -1,4 +1,6 @@
-package org.dsa.graphs;
+package org.dsa.graphs.dijkstra;
+
+
 
 import java.util.*;
 

@@ -1,4 +1,6 @@
-package org.dsa.graphs;
+package org.dsa.graphs.dijkstra;
+
+import org.dsa.graphs.dijkstra.Edge;
 
 import java.util.ArrayList;
 import java.util.List;

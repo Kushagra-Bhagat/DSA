@@ -1,4 +1,4 @@
-package org.dsa.graphs;
+package org.dsa.graphs.bellmanford;
 
 // for negative cycle
 public class BellmanFordNegCycle {

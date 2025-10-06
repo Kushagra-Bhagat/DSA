@@ -32,8 +32,8 @@ public class DisjointSet {
 
     public void unionByRank (int u, int v) {
 
-        int uPar = parent.get(u);
-        int vPar = parent.get(v);
+        int uPar = findUParent(u);
+        int vPar = findUParent(v);
 
         if (uPar == vPar) {
             return;
@@ -53,8 +53,8 @@ public class DisjointSet {
 
     public void unionBySize (int u, int v) {
 
-        int uPar = parent.get(u);
-        int vPar = parent.get(v);
+        int uPar = findUParent(u);
+        int vPar = findUParent(v);
 
         if (uPar == vPar) {
             return;

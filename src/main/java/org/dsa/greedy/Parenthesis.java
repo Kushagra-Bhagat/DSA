@@ -57,9 +57,6 @@ public class Parenthesis {
             }
         }
 
-        if (min <= 0 && max >= 0) {
-            return true;
-        }
-        return false;
+        return min == 0;
     }
 }

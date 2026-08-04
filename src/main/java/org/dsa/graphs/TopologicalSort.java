@@ -1,8 +1,6 @@
 package org.dsa.graphs;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 public class TopologicalSort {
 
@@ -26,6 +24,7 @@ public class TopologicalSort {
         adjList.get(5).add(2);
 
         System.out.println("Topological sort: " + sort(adjList));
+        System.out.println("Topological sort using bfs: " + sortBfs(adjList, v));
     }
 
     public static List<Integer> sort(List<List<Integer>> adjList) {
@@ -59,6 +58,40 @@ public class TopologicalSort {
         }
 
         st.push(idx);
+    }
+
+    public static List<Integer> sortBfs(List<List<Integer>> adjList, int v) {
+
+        int[] indegree = new int[v];
+        List<Integer> res = new ArrayList<>();
+
+        for (int i = 0; i < v; i++) {
+            for (int node : adjList.get(i)) {
+                indegree[node]++;
+            }
+        }
+
+        Queue<Integer> q = new LinkedList<>();
+        for (int i = 0; i < v; i++) {
+            if (indegree[i] == 0) {
+                q.offer(i);
+                res.add(i);
+            }
+        }
+
+        while (!q.isEmpty()) {
+            int node = q.poll();
+
+            for (int adjNode : adjList.get(node)) {
+                indegree[adjNode]--;
+                if (indegree[adjNode] == 0) {
+                    q.offer(adjNode);
+                    res.add(adjNode);
+                }
+            }
+        }
+
+        return res;
     }
 
 }
